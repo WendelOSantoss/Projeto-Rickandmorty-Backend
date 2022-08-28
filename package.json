@@ -1,0 +1,29 @@
+{
+  "name": "modulo-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WendelOSantoss/Projeto1Modulo3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WendelOSantoss/Projeto1Modulo3/issues"
+  },
+  "homepage": "https://github.com/WendelOSantoss/Projeto1Modulo3#readme",
+  "description": ""
+}
