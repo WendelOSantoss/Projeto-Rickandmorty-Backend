@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 const connectToDatabase = () => {
-  mongoose.connect(`mongodb+srv://root:admin@api-rickandmorty.2zmymg4.mongodb.net/?retryWrites=true&w=majority`, {
+  mongoose.connect(process.env.URI_DATABASE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log("MongoDB conectado!"))
+    .then(() => console.log("MongoDB Atlas conectado!"))
     .catch((error) =>
-      console.log(`Erro ao conectar com o MONGODB, erro: ${error}`)
+      console.log(`Erro ao conectar com o MONGODB Atlas, erro: ${error}`)
     );
 };
 
