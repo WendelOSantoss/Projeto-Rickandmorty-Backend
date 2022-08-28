@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectToDatabase = () => {
-  mongoose.connect(`mongodb://localhost:27017/rickandmorty-db`, {
+  mongoose.connect(`mongodb+srv://root:admin@api-rickandmorty.2zmymg4.mongodb.net/?retryWrites=true&w=majority`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
