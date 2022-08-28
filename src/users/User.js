@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const UsuarioSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   nome: {
     type: String,
     require: true,
@@ -34,6 +34,6 @@ UsuarioSchema.pre('save', async function (next) {
   next();
 });
 
-const Usuario = mongoose.model('rickandmorty', UsuarioSchema);
+const User = mongoose.model('User', UserSchema);
 
-module.exports = Usuario;
+module.exports = User;

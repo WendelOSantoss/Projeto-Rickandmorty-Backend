@@ -12,12 +12,8 @@ const findAllcharactersController = async (req, res) => {
 };
 
 const findByIdcharactersController = async (req, res) => {
-  const parametro_id = req.params.id;
-
-  if (!mongoose.Types.ObjectId.isValid(parametro_id)) {
-    return res.status(400).send({ message: "Id inválido." });
-  }
-  const escolhacharacters = await rickandmortyService.findByIdcharactersService(parametro_id);
+  const idParam = req.params.id;
+  const escolhacharacters = await rickandmortyService.findByIdcharactersService(idParam);
   if (!escolhacharacters) {
     return res.status(404).send({ message: "Personagem não encontrado." });
   }
@@ -26,29 +22,14 @@ const findByIdcharactersController = async (req, res) => {
 
 const createcharactersController = async (req, res) => {
   const characters = req.body;
-  if (!characters || !characters.nome || !characters.image) {
-    return res
-      .status(400)
-      .send({ message: "Envie todos os campos preenchidos!" });
-  }
-
-  const newcharacters = await charactersService.createcharactersService(characters);
+  const newcharacters = await rickandmortyService.createcharactersService(characters);
   res.status(201).send(newcharacters);
 };
 
 const updatecharactersController = async (req, res) => {
   const idParam = req.params.id;
-  if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Id inválido." });
-  }
   const charactersEdit = req.body;
-
-  if (!charactersEdit || !charactersEdit.nome || !charactersEdit.image) {
-    return res
-      .status(400)
-      .send({ message: "Envie todos os campos preenchidos!" });
-  }
-  const updatedcharacters = await charactersService.updatecharactersService(
+  const updatedcharacters = await rickandmortyService.updatecharactersService(
     idParam,
     charactersEdit
   );
@@ -57,10 +38,7 @@ const updatecharactersController = async (req, res) => {
 
 const deletecharactersController = async (req, res) => {
   const idParam = req.params.id;
-  if (!mongoose.Types.ObjectId.isValid(idParam)) {
-    return res.status(400).send({ message: "Id inválido." });
-  }
-  await charactersService.deletecharactersService(idParam);
+  await rickandmortyService.deletecharactersService(idParam);
   res.send({ message: "Personagem deletado com sucesso!" });
 };
 

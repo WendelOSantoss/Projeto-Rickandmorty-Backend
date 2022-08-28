@@ -16,7 +16,7 @@ route.get(
   controllerrickandmorty.findByIdcharactersController
 );
 route.post(
-  "/characters/create/:id",
+  "/characters/create",
   validObjectBody,
   controllerrickandmorty.createcharactersController
 );
