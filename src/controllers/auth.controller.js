@@ -1,6 +1,6 @@
-const bcrypt = require('bcryptjs');
-require('dotenv').config();
-const authService = require('../services/auth.service');
+const bcrypt = require("bcryptjs");
+require("dotenv").config();
+const authService = require("../services/auth.service");
 
 loginController = async (req, res) => {
   const { email, senha } = req.body;
@@ -9,7 +9,7 @@ loginController = async (req, res) => {
 
   if (!usuario) {
     return res.status(400).send({
-      message: 'Usuário não encontrado na base de dados. Tente novamente...',
+      message: "Usuário não encontrado na base de dados. Tente novamente...",
     });
   }
 
@@ -18,7 +18,7 @@ loginController = async (req, res) => {
   if (!isPasswordValid) {
     return res
       .status(400)
-      .send({ message: 'Senha inválida! Digite novamente...' });
+      .send({ message: "Senha inválida! Digite novamente..." });
   }
 
   const token = authService.generateToken(usuario.id);
@@ -30,7 +30,7 @@ loginController = async (req, res) => {
       apelido,
       email,
       senha,
-      foto
+      foto,
     },
     token,
   });

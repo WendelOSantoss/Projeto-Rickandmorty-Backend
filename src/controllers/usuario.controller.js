@@ -1,11 +1,11 @@
-const usuariosService = require('../services/usuario.service');
+const usuariosService = require("../services/usuario.service");
 
 const findAllUsuariosController = async (req, res) => {
   const allusuarios = await usuariosService.findAllUsuariosService();
   if (allusuarios.length == 0) {
     return res.status(404).send({
       message:
-        'Não existe nenhum usuário cadastrado na base de dados, viu? Vamos começar...',
+        "Não existe nenhum usuário cadastrado na base de dados, viu? Vamos começar...",
     });
   }
 
@@ -19,7 +19,7 @@ const findByIdUsuarioController = async (req, res) => {
   if (!chosenUsuario) {
     return res
       .status(404)
-      .send({ message: 'Usuário não encontrado na base de dados :(' });
+      .send({ message: "Usuário não encontrado na base de dados :(" });
   }
 
   res.send(chosenUsuario);
@@ -36,7 +36,7 @@ const editUsuarioController = async (req, res) => {
   const editUsuario = req.body;
   const editedUsuario = await usuariosService.editUsuarioService(
     idParam,
-    editUsuario,
+    editUsuario
   );
   res.send(editedUsuario);
 };
@@ -44,7 +44,7 @@ const editUsuarioController = async (req, res) => {
 const deleteUsuarioController = async (req, res) => {
   const idParam = req.params.id;
   await usuariosService.deleteUsuarioService(idParam);
-  res.send({ message: 'Usuário deletado com sucesso da base de dados ;)' });
+  res.send({ message: "Usuário deletado com sucesso da base de dados ;)" });
 };
 
 module.exports = {

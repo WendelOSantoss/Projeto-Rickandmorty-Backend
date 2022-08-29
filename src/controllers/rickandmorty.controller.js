@@ -1,4 +1,4 @@
-const rickandmortyService = require('../services/rickandmorty.service');
+const rickandmortyService = require("../services/rickandmorty.service");
 const mongoose = require("mongoose");
 
 const findAllcharactersController = async (req, res) => {
@@ -13,7 +13,9 @@ const findAllcharactersController = async (req, res) => {
 
 const findByIdcharactersController = async (req, res) => {
   const idParam = req.params.id;
-  const escolhacharacters = await rickandmortyService.findByIdcharactersService(idParam);
+  const escolhacharacters = await rickandmortyService.findByIdcharactersService(
+    idParam
+  );
   if (!escolhacharacters) {
     return res.status(404).send({ message: "Personagem não encontrado." });
   }
@@ -22,7 +24,9 @@ const findByIdcharactersController = async (req, res) => {
 
 const createcharactersController = async (req, res) => {
   const characters = req.body;
-  const newcharacters = await rickandmortyService.createcharactersService(characters);
+  const newcharacters = await rickandmortyService.createcharactersService(
+    characters
+  );
   res.status(201).send(newcharacters);
 };
 
