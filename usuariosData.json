@@ -1,9 +1,9 @@
 [
   {
     "nome": "Wendel Santos",
-    "apelido": "Schatten",
+    "usuario": "Schatten",
     "email": "wendelosantos@hotmail.com",
-    "senha": "123456",
-    "foto": "foto"
+    "password": "123456",
+    "image": "foto"
   }
 ]
