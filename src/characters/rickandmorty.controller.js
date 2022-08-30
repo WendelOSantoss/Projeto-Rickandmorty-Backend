@@ -1,4 +1,4 @@
-const rickandmortyService = require("../services/rickandmorty.service");
+const rickandmortyService = require("./rickandmorty.service");
 const mongoose = require("mongoose");
 
 const findAllcharactersController = async (req, res) => {
@@ -46,10 +46,28 @@ const deletecharactersController = async (req, res) => {
   res.send({ message: "Personagem deletado com sucesso!" });
 };
 
+
+const findsearchrickandrickandmortycontroller = async (req, res) => {
+  const name = req.query.name;
+
+  const characterickandmorty =
+    await rickandmortyService.findsearchrickandmortyservice(name);
+
+  if (!characterickandmorty) {
+    return res.status(404).send({ message: 'Personagem não encontrado!' });
+  }
+
+  res.send(characterickandmorty);
+};
+
+
+
+
 module.exports = {
   findAllcharactersController,
   findByIdcharactersController,
   createcharactersController,
   updatecharactersController,
   deletecharactersController,
+  findsearchrickandrickandmortycontroller,
 };

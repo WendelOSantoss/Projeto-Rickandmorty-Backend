@@ -11,11 +11,11 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/rickandmorty",
+      "url": "http://localhost:3001",
       "description": "API de teste"
     },
     {
-      "url": "https://api-rickandmortys.herokuapp.com/rickandmorty",
+      "url": "https://api-rickandmortydefinitive.herokuapp.com",
       "description": "API de produção"
     }
   ],
@@ -156,7 +156,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Rickandmortys"
+                    "$ref": "#/components/schemas/Rickandmorty"
                   }
                 }
               }
@@ -208,7 +208,7 @@
                 "$ref": "#/components/schemas/Rickandmorty"
               },
               "examples": {
-                "Rickandmortys": {
+                "Rickandmorty": {
                   "value": {
                     "name": "Annie",
                     "image": "https://rickandmortyapi.com/api/character/avatar/17.jpeg"
@@ -349,7 +349,7 @@
   },
   "components": {
     "schemas": {
-      "Rickandmortys": {
+      "Rickandmorty": {
         "type": "object",
         "properties": {
           "name": {

@@ -1,4 +1,4 @@
-const Characters = require("../models/rickandmorty");
+const Characters = require("./rickandmorty");
 
 const findAllcharactersService = async () => {
   const characters = await Characters.find();
@@ -27,10 +27,19 @@ const deletecharactersService = async (id) => {
   return await Characters.findByIdAndDelete(id);
 };
 
+
+const findsearchrickandmortyservice = async (name) => {
+  const rickandmortys = await Characters.findOne({ name: name });
+  return rickandmortys;
+};
+
+
+
 module.exports = {
   findAllcharactersService,
   findByIdcharactersService,
   createcharactersService,
   updatecharactersService,
   deletecharactersService,
+  findsearchrickandmortyservice,
 };
