@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  apelido: {
+  usuario: {
     type: String,
     require: true,
     unique: true,
@@ -18,12 +18,12 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
-  senha: {
+  password: {
     type: String,
     require: true,
     select: false,
   },
-  foto: {
+  image: {
     type: String,
     require: true,
   },
