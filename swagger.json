@@ -73,11 +73,7 @@
         "summary": "Lista de todos os usuários",
         "description": "Rota responsável por listar todos os usuários",
         "tags": ["User"],
-        "security": [
-          {
-            "token": []
-          }
-        ],
+        
         "responses": {
           "200": {
             "description": "OK",
@@ -347,11 +343,7 @@
         "summary": "Busca um personagem pelo nome",
         "description": "Rota responsável por buscar um personagem pelo nome",
         "tags": ["Characters"],
-        "security": [
-          {
-            "token": []
-          }
-        ],
+        
         "parameters": [
           {
             "in": "query",
