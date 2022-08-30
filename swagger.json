@@ -67,12 +67,17 @@
       "get": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Lista de todos os usuários",
         "description": "Rota responsável por listar todos os usuários",
         "tags": ["User"],
+        "security": [
+          {
+            "token": []
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -174,9 +179,9 @@
       "get": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Busca um personagem pelo ID",
         "description": "Rota responsável por buscar um personagem pelo ID",
         "tags": ["Characters"],
@@ -210,9 +215,9 @@
       "post": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Cadastrar uma personagem",
         "description": "Rota responsável por cadastrar um personagem",
         "tags": ["Characters"],
@@ -255,9 +260,9 @@
       "put": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Editar um personagem pelo ID",
         "description": "Rota responsável por editar um personagem pelo ID",
         "tags": ["Characters"],
@@ -308,9 +313,9 @@
       "delete": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Apagar um personagem pelo ID",
         "description": "Rota responsável por apagar um personagem pelo ID",
         "tags": ["Characters"],
@@ -336,9 +341,9 @@
       "get": {
         "security": [
           {
-            "bearerAuth": []
+             "bearerAuth": []
           }
-        ],
+       ],
         "summary": "Busca um personagem pelo nome",
         "description": "Rota responsável por buscar um personagem pelo nome",
         "tags": ["Characters"],
