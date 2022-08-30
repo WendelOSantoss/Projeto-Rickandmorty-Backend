@@ -27,10 +27,10 @@ const createUserController = async (req, res) => {
     user: {
       id: user.id,
       nome,
-      apelido,
+      usuario,
       email,
-      senha,
-      foto,
+      password,
+      image,
     },
     token,
   });
