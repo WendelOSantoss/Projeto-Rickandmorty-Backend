@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
-  nome: {
+  name: {
     type: String,
     require: true,
   },
-  usuario: {
+  username: {
     type: String,
     require: true,
     unique: true,
@@ -23,14 +23,14 @@ const UserSchema = new mongoose.Schema({
     require: true,
     select: false,
   },
-  image: {
+  photo: {
     type: String,
     require: true,
   },
 });
 
 UserSchema.pre("save", async function (next) {
-  this.senha = await bcrypt.hash(this.senha, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 

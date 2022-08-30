@@ -5,8 +5,8 @@ const findAllcharactersService = async () => {
   return characters;
 };
 
-const findByIdcharactersService = async (parametro_id) => {
-  const characters = await Characters.findById(parametro_id);
+const findByIdcharactersService = async (idParam) => {
+  const characters = await Characters.findById(idParam);
   return characters;
 };
 
@@ -15,16 +15,16 @@ const createcharactersService = async (newcharacters) => {
   return charactersCreated;
 };
 
-const updatecharactersService = async (id, charactersEdited) => {
+const updatecharactersService = async (id, charactersEdit) => {
   const charactersupdate = await Characters.findByIdAndUpdate(
     id,
-    charactersEdited
+    charactersEdit
   );
   return charactersupdate;
 };
 
-const deletecharactersService = async (id) => {
-  return await Characters.findByIdAndDelete(id);
+const deletecharactersService = async (idParam) => {
+  return await Characters.findByIdAndDelete(idParam);
 };
 
 

@@ -1,9 +1,9 @@
 [
   {
-    "nome": "Wendel Santos",
-    "usuario": "Schatten",
+    "name": "Wendel Santos",
+    "username": "Schatten",
     "email": "wendelosantos@hotmail.com",
-    "password": "123456",
-    "image": "foto"
+    "password": "wendel",
+    "photo": "foto"
   }
 ]
