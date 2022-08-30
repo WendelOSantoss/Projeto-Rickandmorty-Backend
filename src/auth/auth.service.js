@@ -1,3 +1,4 @@
+require("dotenv").config();
 const User = require("../users/User");
 const jwt = require("jsonwebtoken");
 
@@ -7,3 +8,4 @@ const generatetoken = (userId) =>
   jwt.sign({ id: userId }, process.env.SECRET, { expiresIn: 86400 });
 
 module.exports = { loginService, generatetoken };
+®

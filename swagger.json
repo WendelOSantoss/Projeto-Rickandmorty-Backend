@@ -142,6 +142,11 @@
     },
     "/characters": {
       "get": {
+        "security": [
+          {
+             "bearerAuth": []
+          }
+        ],
         "summary": "Lista de todos os personagens",
         "description": "Rota responsável por listar todos os personagens",
         "tags": ["Characters"],
@@ -348,6 +353,13 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
     "schemas": {
       "Rickandmorty": {
         "type": "object",
