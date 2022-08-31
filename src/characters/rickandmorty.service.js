@@ -6,7 +6,7 @@ const findAllcharactersService = async () => {
 };
 
 const findByIdcharactersService = async (idParam) => {
-  const characters = await Characters.findById(idParam);
+  const characters = await Characters.find({_id: idParam});
   return characters;
 };
 
@@ -29,7 +29,7 @@ const deletecharactersService = async (idParam) => {
 
 
 const findsearchrickandmortyservice = async (name) => {
-  const rickandmortys = await Characters.findOne({ name: name });
+  const rickandmortys = await Characters.find({ name: name });
   return rickandmortys;
 };
 
