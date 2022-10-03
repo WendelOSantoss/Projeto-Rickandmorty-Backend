@@ -117,7 +117,7 @@
       }
     },
     "/characters/update/{id}": {
-      "put": {      
+      "put": {
         "summary": "Editar um personagem pelo ID",
         "description": "Rota responsável por editar um personagem pelo ID",
         "tags": ["Characters"],
@@ -165,7 +165,7 @@
       }
     },
     "/characters/delete/{id}": {
-      "delete": {     
+      "delete": {
         "summary": "Apagar um personagem pelo ID",
         "description": "Rota responsável por apagar um personagem pelo ID",
         "tags": ["Characters"],
@@ -192,7 +192,7 @@
         "summary": "Busca um personagem pelo nome",
         "description": "Rota responsável por buscar um personagem pelo nome",
         "tags": ["Characters"],
-      
+
         "parameters": [
           {
             "in": "query",
@@ -224,13 +224,6 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      }
-    },
     "schemas": {
       "Rickandmorty": {
         "type": "object",
