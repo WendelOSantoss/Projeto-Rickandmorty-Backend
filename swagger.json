@@ -20,134 +20,8 @@
     }
   ],
   "paths": {
-    "/users/create": {
-      "post": {
-        "summary": "Criar novo usuário",
-        "description": "Rota responsável por criar novo usuário",
-        "tags": ["User"],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Users"
-              },
-              "examples": {
-                "Users": {
-                  "value": {
-                    "name": "Wendel",
-                    "username": "Schatten",
-                    "email": "wendelosantos@hotmail.com",
-                    "password": "wendel",
-                    "photo": "foto"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Users"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      }
-    },
-    "/users": {
-      "get": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "summary": "Lista de todos os usuários",
-        "description": "Rota responsável por listar todos os usuários",
-        "tags": ["User"],
-    
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Users"
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
-    "/auth/login": {
-      "post": {
-        "summary": "Login na API RickandMorty",
-        "description": " Rota responsável pelo login",
-        "tags": ["Auth"],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Users"
-              },
-              "examples": {
-                "User": {
-                  "value": {
-                    "email": "wendelosantos@hotmail.com",
-                    "password": "wendel"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "token": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      }
-    },
     "/characters": {
       "get": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
         "summary": "Lista de todos os personagens",
         "description": "Rota responsável por listar todos os personagens",
         "tags": ["Characters"],
@@ -173,11 +47,6 @@
     },
     "/characters/find/{id}": {
       "get": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
         "summary": "Busca um personagem pelo ID",
         "description": "Rota responsável por buscar um personagem pelo ID",
         "tags": ["Characters"],
@@ -209,11 +78,6 @@
     },
     "/characters/create": {
       "post": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
         "summary": "Cadastrar uma personagem",
         "description": "Rota responsável por cadastrar um personagem",
         "tags": ["Characters"],
@@ -253,12 +117,7 @@
       }
     },
     "/characters/update/{id}": {
-      "put": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
+      "put": {      
         "summary": "Editar um personagem pelo ID",
         "description": "Rota responsável por editar um personagem pelo ID",
         "tags": ["Characters"],
@@ -306,12 +165,7 @@
       }
     },
     "/characters/delete/{id}": {
-      "delete": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
+      "delete": {     
         "summary": "Apagar um personagem pelo ID",
         "description": "Rota responsável por apagar um personagem pelo ID",
         "tags": ["Characters"],
@@ -335,11 +189,6 @@
     },
     "/characters/search": {
       "get": {
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
         "summary": "Busca um personagem pelo nome",
         "description": "Rota responsável por buscar um personagem pelo nome",
         "tags": ["Characters"],
@@ -390,26 +239,6 @@
             "type": "string"
           },
           "imageUrl": {
-            "type": "string"
-          }
-        }
-      },
-      "Users": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "photo": {
             "type": "string"
           }
         }
