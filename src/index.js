@@ -6,15 +6,10 @@ const routes = require("./characters/rickandmorty.route");
 const connectToDatabase = require("./database/database");
 const port = process.env.PORT || 3001;
 const app = express();
-const userRoute = require("./users/users.route");
-const authRoute = require("./auth/auth.route");
 connectToDatabase();
 app.use(express.json());
 app.use(cors());
 app.use("/", routes);
-app.use("/users", userRoute);
-app.use("/auth", authRoute);
-
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
